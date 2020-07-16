@@ -1,0 +1,44 @@
+.info{
+    font-size: 12px;
+    display: block;
+    width: 100%;
+    font-family: 'Play', sans-serif;
+    color: burlywood;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    strong{
+        margin: 0 4px 0;
+        color: rgb(190, 113, 12);
+    }
+
+  }
+  @media(max-width: 770px){
+      .field-body{
+          margin: auto;
+          width: 300px;
+        
+                 & .input{
+                      width: 280px!important;
+                  }
+       
+    
+  }
+}
+
+@media(max-width: 410px){
+    .field-body{
+        margin: auto;
+        width: 200px;
+      
+               & .input{
+                    width: 180px!important;
+                }
+     
+  
+}
+}
+  

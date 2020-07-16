@@ -3,7 +3,7 @@
 .budget-item-section
 {
     display: flex;
-    padding: 50px;
+    padding: 10px;
     align-items: center;
     justify-content: center;
     .budget-item-container{
@@ -17,6 +17,7 @@
             flex-direction: column;
             flex-basis: 0; // for the columns to be the same size, regardless of content
             flex-grow: 1;
+            font-size: 18px;
 
             h1{
                 font-weight: 700;
@@ -32,7 +33,7 @@
             }
         }
         .income-column {
-            margin-right: 35px;
+            margin-right: 15px;
 
             h1 {
                 color: $green;

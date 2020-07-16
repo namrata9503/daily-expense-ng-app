@@ -4,14 +4,16 @@
   width: 100%;
   display: flex;
   position: relative;
+  font-size: 18px;
 
-  &:hover{
-    .x-icon-button{
-        opacity: 1;
-        transform: scale(1);
+  &:hover {
+    .x-icon-button {
+      opacity: 1;
+      transform: scale(1);
     }
-}
-  .x-icon-button{
+  }
+
+  .x-icon-button {
     position: absolute;
     width: 34px;
     height: 34px;
@@ -26,8 +28,9 @@
     opacity: 0;
     cursor: pointer;
     transition: opacity .2s ease-out, transform .2s ease-out;
-    &:hover{
-        transform: scale(1.2);
+
+    &:hover {
+      transform: scale(1.2);
     }
   }
 
@@ -39,11 +42,12 @@
   width: 100%;
   border-radius: 5px;
   padding: 10px;
+  font-size: 18px;
   cursor: pointer;
   transition: background-color .2s ease-out;
 
-  &:hover{
-      background-color: darken($light-grey, 5%);
+  &:hover {
+    background-color: darken($light-grey, 5%);
   }
 
   .description {
@@ -54,10 +58,33 @@
     align-items: center;
   }
 
+  @media(max-width: 410px) {
+
+  .description {
+      display: flex;
+      flex: 1;
+      margin-left: 10px;
+      font-size: 13px;
+      align-items: center;
+    }
+
+  }
+
   .amount {
     padding: 5px;
     border-radius: 3px;
   }
+  @media(max-width: 410px) {
+
+    .amount {
+        display: flex;
+        flex: 1;
+        margin-left: 10px;
+        font-size: 13px;
+        align-items: center;
+      }
+  
+    }
 }
 
 .expense {
@@ -79,4 +106,3 @@
     background-color: $light-green;
   }
 }
-

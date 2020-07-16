@@ -41,13 +41,21 @@
 
 }
 
+
+
 .add-item-section {
-    display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex;
+    // Horizontally and vertically center the text
+    justify-content: center;
+    align-items: center;
+
+
+  
 
   .add-item-container {
       width: 680px;
+      margin-top: 0;
   
-  }
+
+    }
 }
