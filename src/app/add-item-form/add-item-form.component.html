@@ -1,13 +1,13 @@
 <form #itemForm="ngForm" (ngSubmit)="onSubmit(itemForm)">
-        <p class="info">Put <strong> Postive </strong> numbers for INCOME & <strong> Negative </strong> numbers for EXPENSES</p>
+        <p class="info"> <strong> Postive </strong> numbers for INCOME & <strong> Negative </strong> numbers for EXPENSES</p>
 
   <div class="field is-horizontal">
     <div class="field-body">
 
       <div class="field is-narrow">
         <p class="control">
-          <input type="number" name="amount" style="width: 100px;" class="input" placeholder="Amount"
-            [ngModel]="item.amount" required>
+          <input type="number" #amount name="amount" style="width: 100px;" class="input" placeholder="Amount"
+            [ngModel]="item.amount" required autofocus>
 
         </p>
 

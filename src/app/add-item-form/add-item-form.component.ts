@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { BudgetItem } from 'src/shared/models/budget-items.model';
 
@@ -11,6 +11,8 @@ export class AddItemFormComponent implements OnInit {
 
   @Input() item: BudgetItem;
   @Output() formSubmit: EventEmitter<BudgetItem> = new EventEmitter<BudgetItem>();
+  @ViewChild('amount', {static: false}) amount: ElementRef;
+
 
   isNewItem:boolean;
   constructor() { }
@@ -31,6 +33,7 @@ export class AddItemFormComponent implements OnInit {
 onSubmit(form: NgForm){
   this.formSubmit.emit(form.value);
   form.reset();
+  this.amount.nativeElement.focus()
 
 }
 }
