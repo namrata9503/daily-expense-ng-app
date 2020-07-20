@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { BudgetItem } from "src/shared/models/budget-items.model";
 import { UpdateEvent } from "../budget-item-list/budget-item-list.component";
+import { NullTemplateVisitor } from "@angular/compiler";
 
 @Component({
   selector: "app-home",
@@ -16,22 +17,29 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.total = +localStorage.getItem("total");
-    if(this.budgetItems){
-      this.budgetItems = JSON.parse(localStorage.getItem("newIt"));
+    if(localStorage.getItem("newIt") !== null){
 
+      this.budgetItems = JSON.parse(localStorage.getItem("newIt"));
+    
+    console.log("new item:" , JSON.parse(localStorage.getItem("newIt")));
     }
   }
 
   addItem(newItem: BudgetItem) {
-   
       this.budgetItems.push(newItem);
 
       this.total += newItem.amount;
-      const n = [...JSON.parse(localStorage.getItem("newIt")), newItem];
-      localStorage.setItem("newIt", JSON.stringify(n));
-  
-     
-       localStorage.setItem("total", JSON.stringify(this.total));
+      if(localStorage.getItem("newIt") !== null){
+       const n = [...JSON.parse(localStorage.getItem("newIt")), newItem];
+       localStorage.setItem("newIt", JSON.stringify(n));
+      }
+      else{
+        const n = [ newItem];
+       localStorage.setItem("newIt", JSON.stringify(n));
+      }
+     // localStorage.removeItem("newIt");
+
+    localStorage.setItem("total", JSON.stringify(this.total));
     localStorage.getItem("total");
   }
 
